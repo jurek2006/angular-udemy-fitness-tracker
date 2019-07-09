@@ -11,10 +11,20 @@
         matInput
         type="email"
         formControlName="email"
-        required
         placeholder="Your email"
       />
-      <mat-error>Field must not be empty.</mat-error>
+      <mat-hint>Please enter a valid email.</mat-hint>
+
+      <mat-error *ngIf="loginForm.get('email').hasError('required')"
+        >Field must not be empty.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          !loginForm.get('email').hasError('required') &&
+          loginForm.get('email').hasError('email')
+        "
+        >Field must be valid email.</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
@@ -22,9 +32,9 @@
         matInput
         type="password"
         formControlName="password"
-        required
         placeholder="Your password"
       />
+      <mat-hint>Please enter your password.</mat-hint>
       <mat-error>Field must not be empty.</mat-error>
     </mat-form-field>
 
