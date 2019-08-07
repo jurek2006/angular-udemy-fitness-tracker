@@ -1,12 +1,11 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stop-training',
   template: `
-    <h1 mat-dialog-title>Are you sure?</h1>
+    <h1 mat-dialog-title>Are you sure {{ name }}?</h1>
     <mat-dialog-content>
-      <p>You already got {{ passedData.progress }}%</p>
+      <p>You already got {{ data.progress }}%</p>
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-button [mat-dialog-close]="true">Yes</button>
@@ -16,7 +15,10 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   styles: [``]
 })
 export class StopTrainingComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) private passedData: any) {}
+  @Input() data;
+  @Input() name;
+
+  constructor() {}
 
   ngOnInit() {}
 }
