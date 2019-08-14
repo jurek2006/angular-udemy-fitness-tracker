@@ -15,6 +15,8 @@ export class TrainingService {
   ];
   private runningExercise: Exercise;
 
+  constructor() {}
+
   public getAvailableExercises() {
     return [...this.availableExercises];
   }
@@ -27,5 +29,7 @@ export class TrainingService {
     this.exerciseChanged.next({ ...this.runningExercise });
   }
 
-  constructor() {}
+  getRunningExercise() {
+    return { ...this.runningExercise };
+  }
 }
