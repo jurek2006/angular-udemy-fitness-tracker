@@ -39,6 +39,12 @@ export class TrainingService {
   }
 
   startExercise(selectedId: string) {
+    // example of interacting with single firestore document
+    // here it stores on exercises types when an exercise was last selected
+    // this.db
+    //   .doc(`availableExercises/${selectedId}`)
+    //   .update({ lastSelected: new Date() });
+
     const selectedExercise = this.availableExercises.find(
       ex => ex.id === selectedId
     );
