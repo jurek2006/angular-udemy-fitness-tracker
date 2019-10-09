@@ -55,7 +55,7 @@
       >Agree to Terms and Conditions</mat-checkbox
     >
     <button
-      *ngIf="!isLoading"
+      *ngIf="!(uiService.loadingStateChanged | async)"
       type="submit"
       mat-raised-button
       color="primary"
@@ -63,6 +63,6 @@
     >
       Submit
     </button>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-spinner *ngIf="uiService.loadingStateChanged | async"></mat-spinner>
   </form>
 </section>

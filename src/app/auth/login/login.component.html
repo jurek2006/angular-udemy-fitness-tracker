@@ -39,7 +39,7 @@
     </mat-form-field>
 
     <button
-      *ngIf="!isLoading"
+      *ngIf="!(uiService.loadingStateChanged | async)"
       type="submit"
       mat-raised-button
       color="primary"
@@ -47,6 +47,6 @@
     >
       Log in
     </button>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-spinner *ngIf="uiService.loadingStateChanged | async"></mat-spinner>
   </form>
 </section>
