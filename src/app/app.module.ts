@@ -27,11 +27,11 @@ import { TrainingModule } from './training/training.module';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AuthModule,
-    TrainingModule
+    TrainingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
