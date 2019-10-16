@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { AuthModule } from './auth/auth.module';
-import { TrainingModule } from './training/training.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { TrainingModule } from './training/training.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AuthModule,
-    TrainingModule,
     AppRoutingModule
   ],
   providers: [],
