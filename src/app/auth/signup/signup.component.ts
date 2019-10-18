@@ -11,10 +11,7 @@ import { UiService } from 'src/app/shared/ui.service';
 export class SignupComponent implements OnInit {
   maxDate;
 
-  constructor(
-    private authService: AuthService,
-    protected uiService: UiService
-  ) {}
+  constructor(private authService: AuthService, public uiService: UiService) {}
 
   ngOnInit() {
     this.maxDate = new Date();
